@@ -1,13 +1,16 @@
 /*########
 OOXX
 #########*/
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 public class ooxx{
     static int playerScore = 0;
         static int playerSum = 0;
         static int botScore = 0;
         static int botSum = 0;
+        static int sum = 0;
+        static int tmp1 = 0;
+        static int tmp2 = 0;
     public static void main (String []args){
         System.out.println("====OOXX====");
         System.out.println("00 | 01 | 02");
@@ -16,24 +19,14 @@ public class ooxx{
         System.out.println("------------");
         System.out.println("20 | 21 | 22");
         //o=0;x=9
-        int [][] ooxx ={{1,2,3},{3,1,2},{2,3,1}};
+        int [][] ooxx ={{8,1,6},{3,5,7},{4,9,2}};
         while (true) {
-            int sum = botSum = playerSum;
-            System.out.println("目前步數總和"+sum);
-            play(ooxx,playerScore,playerSum,botScore,botSum);
-            if(playerScore == 6 && playerSum >=3){
+            play(ooxx);
+            if(playerScore == 15 && playerSum >=3){
                 System.out.println("你贏了");
                 break;
             }
-            else if(botScore == 6 && botSum >=3){
-                System.out.println("你輸了");
-                break;
-            }
-            else if(playerScore == 3 && playerSum >=3){
-                System.out.println("你贏了");
-                break;
-            }
-            else if(botScore == 3 && botSum >=3){
+            else if(botScore == 15 && botSum >=3){
                 System.out.println("你輸了");
                 break;
             }
@@ -58,29 +51,37 @@ public class ooxx{
             }  
         }
     }
-    public static void play(int[][] ooxx,int playerScore,int playerSum,int botScore,int botSum){
+    public static void play(int[][] ooxx){
         System.out.println("\n輸入位置座標");
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
         int i =sc.nextInt();
         int j =sc.nextInt();
-        if (ooxx[i][j]==0 || ooxx[i][j]==9){
+        if (ooxx[i][j]==0 || ooxx[i][j]==10){
                 System.out.println("已經有人填了");
         }
         else{
-        ooxx[i][j] += playerScore;    
-        ooxx [i][j] =0;
-        playerSum +=1;
+            tmp1 = ooxx[i][j];
+            playerScore += tmp1;
+            ooxx [i][j] =0;
+            playerSum +=1;
+            sum+=1;
         while (true) {
             int m = random.nextInt(0,3);
             int n = random.nextInt(0,3);
-            if (ooxx[m][n]!=0 && ooxx[m][n]!=9){
-                ooxx[m][n]+=botScore;
-                ooxx[m][n]=9;
+            if(sum == 9){
+                break;
+            }
+            if (ooxx[m][n]!=0 && ooxx[m][n]!=10){
+                tmp2 = ooxx[m][n];
+                botScore += tmp2;
+                ooxx[m][n]=10;
                 botSum +=1;
+                sum+=1;
                 break;
             }
         }
+        System.out.println("雙方總步數"+sum);
         }
         return;
     }
