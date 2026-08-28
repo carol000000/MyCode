@@ -21,6 +21,19 @@ public class ooxx{
         //o=0;x=9
         int [][] ooxx ={{8,1,6},{3,5,7},{4,9,2}};
         while (true) {
+            for(int f=0;f<3;f++){
+                    System.out.println("\n--------");
+                    for(int g=0;g<3;g++){
+                        System.out.print("|");
+                        
+                        if(ooxx[f][g]==0){
+                            System.out.print("O ");}
+                        else if(ooxx[f][g]==10){
+                            System.out.print("X ");}
+                        else{
+                            System.out.print("  ");}
+                    }
+                }
             play(ooxx);
             if(playerScore == 15 && playerSum >=3){
                 System.out.println("你贏了");
@@ -30,24 +43,12 @@ public class ooxx{
                 System.out.println("你輸了");
                 break;
             }
-            else if(sum >=9){
+            else if(sum ==9){
                 System.out.println("平手");
                 break;}
             else{
                 System.out.println("==========");
-                for(int f=0;f<3;f++){
-                    System.out.println("\n--------");
-                    for(int g=0;g<3;g++){
-                        System.out.print("|");
-                        
-                        if(ooxx[f][g]==0){
-                            System.out.print("O ");}
-                        else if(ooxx[f][g]==9){
-                            System.out.print("X ");}
-                        else{
-                            System.out.print("  ");}
-                    }
-                }
+                
             }  
         }
     }
@@ -72,7 +73,7 @@ public class ooxx{
             if(sum == 9){
                 break;
             }
-            if (ooxx[m][n]!=0 && ooxx[m][n]!=10){
+            else if(ooxx[m][n]!=0 && ooxx[m][n]!=10){
                 tmp2 = ooxx[m][n];
                 botScore += tmp2;
                 ooxx[m][n]=10;
@@ -80,6 +81,7 @@ public class ooxx{
                 sum+=1;
                 break;
             }
+            else continue;
         }
         System.out.println("雙方總步數"+sum);
         }
