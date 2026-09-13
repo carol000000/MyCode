@@ -1,3 +1,4 @@
+//wa 要用dp
 import java.util.Scanner;
 public class d904{
     public static void main(String []args){
