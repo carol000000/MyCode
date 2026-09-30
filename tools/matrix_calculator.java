@@ -44,7 +44,7 @@ public class matrix_calculator{
         int m1 = sc.nextInt();
         int n2 = sc.nextInt();
         int m2 = sc.nextInt();
-        if (n1 !=n2 || n2 != m2){
+        if (n1 !=n2 || m2 != m2){
             System.out.println("矩陣大小不同，無法相加");
             return;
         }
@@ -81,7 +81,7 @@ public class matrix_calculator{
         int m1 = sc.nextInt();
         int n2 = sc.nextInt();
         int m2 = sc.nextInt();
-        if (n1 !=n2 || n2 != m2){
+        if (n1 !=n2 || m1 != m2){
             System.out.println("矩陣大小不同，無法相加");
             return;
         }

@@ -8,7 +8,7 @@ FPS = 60
 h = 1500 #高
 w = 800 #寬
 bg = (96,152,44) #背景
-gamename = "Poop Game"
+gamename = "Py_Game"
 
 #主角
 p1s = 5
@@ -25,8 +25,8 @@ clock = pygame.time.Clock()
 running = True
 
 #圖片
-playerImg = pygame.image.load(os.path.join("pygame","img","player01.png")).convert_alpha()
-poopImg = pygame.image.load(os.path.join("pygame","img","poop.png"))
+playerImg = pygame.image.load(os.path.join("img","player01.png")).convert_alpha()
+poopImg = pygame.image.load(os.path.join("img","123.png"))
 
 
 
