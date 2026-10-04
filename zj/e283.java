@@ -1,3 +1,4 @@
+//還沒寫完
 import java.util.Scanner;
 public class e283 {
     public static void main(String []args){
