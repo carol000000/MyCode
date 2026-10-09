@@ -1,3 +1,4 @@
+/* 
 //還沒寫完
 import java.util.Scanner;
 public class e283 {
@@ -37,3 +38,4 @@ public class e283 {
          }
     }
 }
+    */

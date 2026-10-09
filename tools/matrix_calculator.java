@@ -67,7 +67,7 @@ public class matrix_calculator{
         for(i=0;i<n1;i++){
             for (j=0;j<m2;j++){
                 double c = a[i][j]+b[i][j];
-                System.out.print(c+" ");
+                System.out.print(c+" | ");
             }
             System.out.println();
         }
@@ -104,7 +104,7 @@ public class matrix_calculator{
         for(i=0;i<n1;i++){
             for (j=0;j<m2;j++){
                 double c = a[i][j]-b[i][j];
-                System.out.print(c+" ");
+                System.out.print(c+" | ");
             }
             System.out.println();
         }
@@ -129,7 +129,7 @@ public class matrix_calculator{
         for(i=0;i<n1;i++){
             for (j=0;j<m1;j++){
                 double c = a[i][j]*n;
-                System.out.print(c+" ");
+                System.out.print(c+" | ");
             }
             System.out.println();
         }
@@ -169,7 +169,7 @@ public class matrix_calculator{
                 for(int k=0;k<m1;k++){
                     c[i][j] += a[i][k] * b[k][j];
                 }
-                System.out.print(c[i][j]);
+                System.out.print(c[i][j]+" | ");
             }   
             System.out.println();
         }
@@ -199,7 +199,7 @@ public class matrix_calculator{
         for(i=0;i<2;i++){
             for (j=0;j<2;j++){
                 double c = a[i][j]/d;
-                System.out.print(c+" ");
+                System.out.print(c+" | ");
             }
             System.out.println();
         }
